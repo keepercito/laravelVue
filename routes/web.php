@@ -33,3 +33,6 @@ Route::post('/submit', function (Request $request) {
     tap(new App\Link($data))->save();
     return redirect('/');
 });
+
+Route::resource('/links','LinkController');
+Route::get('/links/getAll','LinkController@getAll')->name("links.getAll");
