@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('links', 'LinkController@getAll')->name('links.getAll');
+
+Route::post('links','LinkController@store')->name('store');

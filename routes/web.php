@@ -20,10 +20,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/submit', function () {
-    return view('submit');
-});
-
 Route::post('/submit', function (Request $request) {
     $data= $request->validate([
         'title'=>'required|max:255',
@@ -35,4 +31,4 @@ Route::post('/submit', function (Request $request) {
 });
 
 Route::resource('/links','LinkController');
-Route::get('/links/getAll','LinkController@getAll')->name("links.getAll");
+//Route::get('/links/getAll','LinkController@getAll')->name("links.getAll");

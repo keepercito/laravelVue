@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Link;
 
 class LinkController extends Controller
 {
@@ -15,11 +16,11 @@ class LinkController extends Controller
     {
         return view("linksList");
     }
-    
-    public function getAll()
+
+    public function getAll(Request $request)
     {
         if($request->ajax())
-            return App\Link::all();
+            return Link::all();
         else
             return "no hay nada";
     }
@@ -31,7 +32,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        //
+        return view('submit');
     }
 
     /**

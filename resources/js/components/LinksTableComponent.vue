@@ -28,8 +28,13 @@
         data: function () {
             return{
                 link:{title: '', url: '', description:''},
-                links: [],
+                links: []
             }
+        },
+        created(){
+            axios.get('api/links').then(result => {
+                this.links = result.data;
+            });
         },
         mounted() {
             console.log('Component mounted.')
