@@ -1755,7 +1755,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  /*
+      en el return de data, deben ir todos los
+      atributos que utiliza el componente*/
   data: function data() {
     return {
       link: {
@@ -1772,6 +1779,11 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('api/links').then(function (result) {
       _this.links = result.data;
     });
+    /* estructura de funcion axios, para llamadas
+        asincronas
+    axios.tipoPeticion('ruta').then(result => {
+       javascript burdo y salvaje
+    })*/
   },
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37119,13 +37131,13 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-12" }, [
-        _c("table", [
+        _c("table", { staticClass: "table table-striped" }, [
           _vm._m(0),
           _vm._v(" "),
           _c(
             "tbody",
             _vm._l(_vm.links, function(link) {
-              return _c("tr", [
+              return _c("tr", { attrs: { scope: "row" } }, [
                 _c("td", [_vm._v(_vm._s(link.title))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(link.url))]),
@@ -37147,11 +37159,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Titulo")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Titulo")]),
         _vm._v(" "),
-        _c("th", [_vm._v("URL")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("URL")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Descripcion")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Descripcion")])
       ])
     ])
   }
@@ -49322,6 +49334,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+//el nombre del componente, es el primer parametro esta linea, es valido tambien como nombre
+//ExampleComponent, pero en la vista, la custom tag tendria q ser <example-component>
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('linkstable', __webpack_require__(/*! ./components/LinksTableComponent.vue */ "./resources/js/components/LinksTableComponent.vue")["default"]);

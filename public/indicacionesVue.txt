@@ -1,0 +1,11 @@
+- la ruta para la tabla inicial con vue es "/links" (precedida de la ruta del servido de la aplicacion)
+- inicialmente, LinkController tiene una ruta resource en "routes/web.php",
+  he pensado, que en web.php se tengan las rutas para renderizar vistas, las
+  rutas para obtencion y procesado de data, estarian en "routes/api.php"
+- la aplicacion esta funcionando con sqlite, para crear su db usar el comando "touch database/nombreDelArchivo.sqlite"
+- para tener data inicial, correr el comando "php artisan migrate:fresh --seed"
+- para la instalacion de los modulos del archivo "package.json", correr el comando "npm i"
+- todo lo relacionado con vue, esta en "public/js/*"
+- en la carpeta "public/js/components" se encuentran los componentes vue
+- si crean un componente, deberan de crear un archivo con ".vue", en la carpeta components
+- los componentes se declaran antes de crear la instancia de vue (new Vue)

@@ -19,8 +19,11 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+//el nombre del componente, es el primer parametro esta linea, es valido tambien como nombre
+//ExampleComponent, pero en la vista, la custom tag tendria q ser <example-component>
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('linkstable', require('./components/LinksTableComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,5 +32,5 @@ Vue.component('linkstable', require('./components/LinksTableComponent.vue').defa
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#app'
 });
