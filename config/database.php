@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'), Tengo
+    'default' => env('DB_CONNECTION', 'mysql')
 
     /*
     |--------------------------------------------------------------------------
