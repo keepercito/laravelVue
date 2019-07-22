@@ -71,7 +71,7 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
+                        <a href="{{ route('libros')}}">Libros</a>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
@@ -88,6 +88,17 @@
                         <a href="{{$link->url}}">{{$link->title}}</a>
                     @endforeach
                 </div>
+                <div class="row">
+                    <div id="libros">
+                    Libros:
+                    @foreach ($libros as $libro)
+                        <div class="col-sm-2">
+                            {{$libro->Nombre}} por {{$libro->Autor}}
+                        </div>
+                    @endforeach
+                    </div>
+                </div>
+
                 <!--<div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>

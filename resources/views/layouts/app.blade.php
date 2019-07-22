@@ -73,7 +73,9 @@
         </nav>
 
         <main class="py-4">
+            <!--Sección que se puede sobreescribir-->
             @yield('content')
+            @yield('libro')
         </main>
     </div>
 </body>
